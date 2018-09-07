@@ -9,6 +9,20 @@ generators:
   database: null
   inactive: false
   matches: []
+- type: "sla"
+  assertions: []
+  severity: "Major"
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: "3000"
+    methods: "Get"
+    denyRoles: null
+    pathPatterns: "/api/v1/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
