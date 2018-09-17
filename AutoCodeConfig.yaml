@@ -8,67 +8,37 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
+- type: "sla"
+  assertions:
+  - "@StatusCode == 200"
+  - "@StatusCode != 404"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: null
+    value: "1000"
+    methods: "Get"
+    denyRoles: null
+    pathPatterns: "/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "anonymous_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
   severity: null
   database: null
   inactive: false
-  matches: []
-- type: "DDOS"
-  assertions:
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  severity: null
-  database: null
-  inactive: false
-  matches:
-  - name: "pageSize, page_size, maxResults, max_results"
-    value: null
-    methods: null
-    denyRoles: null
-    pathPatterns: null
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
-- type: "XSS_Injection"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: false
-  matches: []
-- type: "sql_injection_timebound"
-  assertions:
-  - "@ResponseTime < 7000"
-  - "@StatusCode != 404"
-  severity: null
-  database:
-    name: "MySQL"
-    version: "5.7"
-  inactive: false
-  matches: []
-- type: "log_Forging"
-  assertions:
-  - "@StatusCode != 200"
-  - "@StatusCode != 401"
-  - "@StatusCode != 404"
-  - "@StatusCode != 500"
-  severity: null
-  database: null
-  inactive: false
-  matches: []
+  matches: null
 - type: "rbac"
   assertions:
   - "@StatusCode == 403"
@@ -108,6 +78,53 @@ generators:
     resourceSamples: null
     queryParams: null
     bodyProperties: null
+- type: "DDOS"
+  assertions:
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  severity: null
+  database: null
+  inactive: false
+  matches:
+  - name: "pageSize, page_size, maxResults, max_results"
+    value: null
+    methods: null
+    denyRoles: null
+    pathPatterns: null
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
+- type: "sql_injection_timebound"
+  assertions:
+  - "@ResponseTime > 7000"
+  - "@ResponseTime < 10000"
+  - "@StatusCode != 404"
+  severity: null
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: false
+  matches: []
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: null
+- type: "log_Forging"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: null
+  database: null
+  inactive: false
+  matches: null
 - type: "invalid_datatype"
   assertions:
   - "@StatusCode != 401"
@@ -115,7 +132,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "special_chars "
   assertions:
   - "@StatusCode != 200"
@@ -125,7 +142,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "null_value"
   assertions:
   - "@StatusCode != 200"
@@ -135,7 +152,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "empty_value"
   assertions:
   - "@StatusCode != 200"
@@ -145,7 +162,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "negative_number"
   assertions:
   - "@StatusCode != 401"
@@ -153,7 +170,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
 - type: "create"
   assertions:
   - "@StatusCode != 200"
@@ -163,4 +180,4 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches: null
