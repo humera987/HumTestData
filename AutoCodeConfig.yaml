@@ -32,7 +32,16 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches: []
+  matches:
+  - name: null
+    value: null
+    methods: "Get"
+    denyRoles: null
+    allowRoles: null
+    pathPatterns: "/api/v1/user-signup/**"
+    resourceSamples: null
+    queryParams: null
+    bodyProperties: null
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
