@@ -61,7 +61,7 @@ testCases:
 assertions:
   - "@StatusCode == 200"
   - "@ResponseTime >= 1000"
-  - "@ResponseTime >= 700 AND @ResponseTime<=10000"
+  - "@ResponseTime >= 700AND@ResponseTime<=10000"
   #- "@Response.errors == false || @Response.data.errors == false"
   #- "@Response.data.name == @Request.name"
   #- "@Response.data.url == @Request.url"
