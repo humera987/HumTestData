@@ -1,6 +1,6 @@
 ---
 genPolicy: "Create"
-openAPISpec: "http://13.56.210.25/v2/api-docs"
+openAPISpec: "http://13.56.210.25/v2/api-doc"
 generators:
 - type: "no_params"
   assertions:
@@ -32,16 +32,7 @@ generators:
   severity: null
   database: null
   inactive: false
-  matches:
-  - name: null
-    value: null
-    methods: "Get"
-    denyRoles: null
-    allowRoles: null
-    pathPatterns: "/api/v1/user-signup/**"
-    resourceSamples: null
-    queryParams: null
-    bodyProperties: null
+  matches: []
 - type: "auth_invalid"
   assertions:
   - "@StatusCode != 200"
